@@ -1,22 +1,85 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My Diary</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="collapse navbar-collapse" id="navbarContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/diary">Diary</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/diaryEntry">Diary Entry</a>
-      </li>
-     
-    </ul>
+  <!-- Bootstrap 5 CSS -->
+  
+  <style>
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      margin-right: 10px;
+    }
+
+    /* Make sidebar more stylish */
+    .offcanvas-start {
+      background-color: #f8f9fa;
+      width: 250px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .offcanvas-title {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .nav-link:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top " style="margin-bottom: 80px">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My Diary</a>
+
+    <!-- Hamburger icon (only visible on mobile) -->
+    <button class="btn btn-outline-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+      ☰
+    </button>
+
+    <!-- Normal navbar links (visible on larger screens) -->
+    <div class="collapse navbar-collapse d-none d-lg-block ">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diary">📓 Diary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diaryEntry">✍️ Diary Entry</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
+<!-- Sidebar for mobile -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileSidebarLabel">My Diary</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="/">🏠 Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/diary">📓 Diary</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/diaryEntry">✍️ Diary Entry</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
