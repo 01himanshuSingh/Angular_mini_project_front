@@ -21,7 +21,7 @@ export class DiaryaddComponent {
   onSubmit() {
     console.log('Submitting:', this.diary);
 
-    this.http.post('http://localhost:3000/api/diaries', this.diary).subscribe({
+    this.http.post('https://angular-project-mini-backend.vercel.app/api/diaries', this.diary).subscribe({
       next: (res) => {
         console.log('✅ Submitted to backend:', res);
         alert('Diary submitted successfully!');

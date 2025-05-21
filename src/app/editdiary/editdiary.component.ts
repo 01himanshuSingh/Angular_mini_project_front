@@ -39,7 +39,7 @@ export class EditdiaryComponent  implements OnInit {
 
   onUpdate(form: NgForm): void {
     if (form.valid) {
-      this.http.put(`http://localhost:3000/api/diaries/${this.diaryId}`, this.diary)
+      this.http.put(`https://angular-project-mini-backend.vercel.app/api/diaries/${this.diaryId}`, this.diary)
         .subscribe(() => {
           alert('✅ Diary updated successfully!');
           this.router.navigate(['/']);
