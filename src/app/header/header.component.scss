@@ -1,0 +1,28 @@
+// Custom Navbar Styling
+.navbar {
+  background-color: #6B1243 !important;
+
+  .navbar-brand,
+  .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link.active {
+    color: #F0C808 !important; // Highlight active link in yellow
+  }
+
+  .nav-link:hover {
+    color: #F0C808 !important; // Hover color
+  }
+
+  .navbar-toggler {
+    border-color: #ffffff;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+}

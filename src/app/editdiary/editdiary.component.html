@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="card shadow p-4">
+    <h2 class="text-center mb-4 text-warning">✏️ Edit Diary Entry</h2>
+
+    <form (ngSubmit)="onUpdate(editForm)" #editForm="ngForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          required
+          [(ngModel)]="diary.title"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          name="date"
+          required
+          [(ngModel)]="diary.date"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="entry" class="form-label">Diary Entry</label>
+        <textarea
+          class="form-control"
+          id="entry"
+          name="entry"
+          rows="5"
+          required
+          [(ngModel)]="diary.entry"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-warning w-100">
+        💾 Update Entry
+      </button>
+    </form>
+  </div>
+</div>
