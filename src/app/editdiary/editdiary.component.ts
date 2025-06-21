@@ -29,7 +29,7 @@ export class EditdiaryComponent  implements OnInit {
   }
 
   fetchDiaryEntry(): void {
-    this.http.get(`https://angular-project-mini-backend.vercel.app/api/diaries/${this.diaryId}`)
+    this.http.get(`https://angular-project-mini-backend.vercel.appbb/api/diaries/${this.diaryId}`)
       .subscribe((data: any) => {
         this.diary = data;
       }, error => {
