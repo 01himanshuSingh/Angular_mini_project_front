@@ -1,33 +1,4 @@
-<!-- <div class="container py-5 mt-3" >
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="subtitile">📚 All Diary Entries</h2>
-    <button class="btn btn-success" (click)="fetchEntries()">🔄 Refresh</button>
-  </div>
-
-  <div *ngIf="entries.length === 0" class="alert alert-info text-center">
-    No diary entries found.
-  </div>
-
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" *ngIf="entries.length > 0">
-    <div class="col" *ngFor="let entry of entries">
-      <div class="card shadow-sm h-100">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title ">{{ entry.title }}</h5>
-          <h6 class="card-subtitle mb-2  " style="color: #ffffff;">📅 {{ entry.date  }}</h6>
-          <p class="card-text flex-grow-1" style="color: aliceblue;">{{ entry.entry }}</p>
-          <div class="mt-3 d-flex justify-content-between">
-           <a class="btn btn-warning btn-sm" style="color: #000000;" [routerLink]="['/edit', entry._id]">✏️ Edit</a>
-
-            <button class="btn btn-danger btn-sm" style="color: #ffffff;" (click)="deleteEntry(entry._id)">🗑️ Delete</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
-
- <div class="container py-5">
+<div class="container py-5">
   <!-- Header -->
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold text-uppercase" style="color: #4e0131;">📚 My Life 🙃</h2>
