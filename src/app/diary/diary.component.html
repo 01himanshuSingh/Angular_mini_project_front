@@ -1,4 +1,4 @@
-<div class="container py-5">
+<div class="container py-5 mt-2">
   <!-- Header -->
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold text-uppercase" style="color: #4e0131;">📚 My Life 🙃</h2>
@@ -19,7 +19,7 @@
   <!-- Entries Grid -->
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" *ngIf="entries.length > 0">
     <div class="col" *ngFor="let entry of entries">
-      <div class="card h-100 shadow-lg border-0" style="border-radius: 16px;">
+      <div class="card h-100 shadow-lg border-0" style="border-radius: 16px; background-color: white;" >
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fw-bold mb-2" style="color: #4e0131;">📝 {{ entry.title }}</h5>
           <h6 class="card-subtitle mb-3 text-muted">📅 {{ entry.date }}</h6>
