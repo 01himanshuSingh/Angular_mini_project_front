@@ -20,7 +20,7 @@ export class DiaryComponent implements OnInit {
   }
 
   fetchEntries() {
-    this.http.get<any[]>('http://localhost:3000/api/diaries').subscribe({
+    this.http.get<any[]>('https://angular-project-mini-backend.vercel.app/api/diaries').subscribe({
       next: (data) => this.entries = data,
       error: (err) => console.error('Error fetching entries:', err)
     });
