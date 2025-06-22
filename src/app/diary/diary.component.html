@@ -25,20 +25,37 @@
           <h6 class="card-subtitle mb-3 text-muted">📅 {{ entry.date }}</h6>
           <p class="card-text flex-grow-1 text-dark" style="font-size: 0.95rem;">{{ entry.entry }}</p>
           <div class="mt-3 d-flex justify-content-between">
-            <button 
-              class="btn btn-sm" 
-              (click)="editEntry(entry)" 
-              style="background-color: #f0e223; color: #000; border-radius: 6px;"
+              <button 
+              class="btn btn-sm"
+              (click)="editEntry(entry._id)" 
+              style="
+                background-color: #0cbaba;
+                color: white;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(12,186,186,0.4);
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.backgroundColor='#0aa4a4';"
+              onmouseout="this.style.backgroundColor='#0cbaba';"
             >
-              ✏️ Edit
+               Edit
             </button>
-            <button 
-              class="btn btn-sm" 
+              <button 
+              class="btn btn-sm"
               (click)="deleteEntry(entry._id)" 
-              style="background-color: #91025a; color: white; border-radius: 6px;"
+              style="
+                background-color: #ff4d6d;
+                color: white;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(255,77,109,0.4);
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.backgroundColor='#e0435f';"
+              onmouseout="this.style.backgroundColor='#ff4d6d';"
             >
               🗑️ Delete
             </button>
+         
           </div>
         </div>
       </div>
