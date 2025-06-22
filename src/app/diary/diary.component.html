@@ -26,8 +26,8 @@
           <p class="card-text flex-grow-1 text-dark" style="font-size: 0.95rem;">{{ entry.entry }}</p>
           <div class="mt-3 d-flex justify-content-between">
               <button 
-              class="btn btn-sm"
-              (click)="editEntry(entry._id)" 
+              class="btn px-3"
+                (click)="editEntry(entry)"
               style="
                 background-color: #0cbaba;
                 color: white;
@@ -53,7 +53,7 @@
               onmouseover="this.style.backgroundColor='#e0435f';"
               onmouseout="this.style.backgroundColor='#ff4d6d';"
             >
-              🗑️ Delete
+               Delete
             </button>
          
           </div>
