@@ -1,46 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-diary',
-  standalone: true,            // if standalone component
-  imports: [CommonModule, RouterLink], // must import these for *ngIf, http, etc.
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './diary.component.html',
-  styleUrls: ['./diary.component.scss']      // fixed plural
+  styleUrls: ['./diary.component.scss']
 })
 export class DiaryComponent implements OnInit {
   entries: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.fetchEntries();
   }
 
-  fetchEntries() {
+  fetchEntries(): void {
     this.http.get<any[]>('https://angular-project-mini-backend.vercel.app/api/diaries').subscribe({
-      next: (data) => this.entries = data,
-      error: (err) => console.error('Error fetching entries:', err)
+      next: (data) => (this.entries = data),
+      error: (err) => console.error('❌ Error fetching entries:', err)
     });
   }
 
-  deleteEntry(id: string) {
-  this.http.delete(`https://angular-project-mini-backend.vercel.app/api/diaries/${id}`).subscribe({
-    next: () => {
-      console.log('Deleted successfully');
-      this.fetchEntries(); // refresh list
-    },
-    error: (err) => {
-      console.error('Delete failed:', err);
-    }
-  });
-}
+  deleteEntry(id: string): void {
+    this.http.delete(`https://angular-project-mini-backend.vercel.app/api/diaries/${id}`).subscribe({
+      next: () => {
+        console.log('🗑️ Deleted successfully');
+        this.fetchEntries(); // Refresh the list after deletion
+      },
+      error: (err) => {
+        console.error('❌ Delete failed:', err);
+      }
+    });
+  }
 
-
-  editEntry(entry: any) {
-    alert('🛠️ You can navigate to an edit form and update this entry.\nEntry:\n' + JSON.stringify(entry, null, 2));
-    // Later you can route to /edit/:id for editing functionality
+  editEntry(entry: any): void {
+    this.router.navigate(['/edit', entry._id]); // ✅ Navigate to edit/:id route
   }
 }
